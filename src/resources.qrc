@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="check.png">resources/images/check.png</file>
+        <file alias="cross_16.png">resources/images/cross_16.png</file>
+        <file alias="exclamation_16.png">resources/images/exclamation_16.png</file>
+        <file alias="face.png">resources/images/face.png</file>
+        <file alias="face_banned.png">resources/images/face_banned.png</file>
+        <file alias="face_operator.png">resources/images/face_operator.png</file>
+        <file alias="information_16.png">resources/images/information_16.png</file>
+        <file alias="cross.png">resources/images/shadowless-cross.png</file>
+        <file alias="tick.png">resources/images/shadowless-tick.png</file>
+        <file alias="Logo.png">resources/images/Logo.png</file>
+        <file alias="world.png">resources/images/world.png</file>
+        <file alias="exclamation.png">resources/images/exclamation.png</file>
+        <file alias="world_32.png">resources/images/world_32.png</file>
+        <file alias="world_32_tick.png">resources/images/world_32_tick.png</file>
+        <file alias="arrow.png">resources/images/arrow.png</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file alias="join_sound.wav">resources/sounds/join_sound.wav</file>
+    </qresource>
+</RCC>

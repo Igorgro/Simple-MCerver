@@ -1,0 +1,2836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>668</width>
+    <height>468</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>10000</width>
+    <height>468</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Simple MCerver</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Icon.png</normaloff>Icon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_6">
+    <property name="leftMargin">
+     <number>12</number>
+    </property>
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="rightMargin">
+     <number>12</number>
+    </property>
+    <property name="bottomMargin">
+     <number>12</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_general">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="title">
+        <string>General</string>
+       </attribute>
+       <layout class="QGridLayout" name="tab_general_layout" rowstretch="0,0,0,0" columnstretch="9,26">
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <property name="topMargin">
+         <number>14</number>
+        </property>
+        <property name="rightMargin">
+         <number>14</number>
+        </property>
+        <property name="bottomMargin">
+         <number>14</number>
+        </property>
+        <property name="horizontalSpacing">
+         <number>16</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>8</number>
+        </property>
+        <item row="0" column="1" rowspan="3">
+         <widget class="QGroupBox" name="console_group">
+          <property name="title">
+           <string>Server console</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4" rowstretch="0,0" columnstretch="8,1">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>8</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <property name="spacing">
+            <number>8</number>
+           </property>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="send_button">
+             <property name="text">
+              <string>Send</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="command_edit"/>
+           </item>
+           <item row="0" column="0" colspan="2">
+            <widget class="QTextEdit" name="console_area">
+             <property name="minimumSize">
+              <size>
+               <width>420</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="console_control_group">
+          <property name="minimumSize">
+           <size>
+            <width>148</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>148</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Control</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>8</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="start_button">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="stop_button">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Stop</string>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="kill_button">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Kill server</string>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="status_group">
+          <property name="minimumSize">
+           <size>
+            <width>148</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>148</width>
+            <height>64</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Status</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>6</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>10</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="status_label">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Not running</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="status_icon">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="resources.qrc">:/images/cross.png</pixmap>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="console_opts_group">
+          <property name="minimumSize">
+           <size>
+            <width>148</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>148</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Console options</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>8</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="export_log_button">
+             <property name="text">
+              <string>Export log...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="log_level_label">
+             <property name="text">
+              <string>Log level:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="log_level_box">
+             <item>
+              <property name="text">
+               <string>Info</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/images/information_16.png</normaloff>:/images/information_16.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Warning</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/images/exclamation_16.png</normaloff>:/images/exclamation_16.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Error</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/images/cross_16.png</normaloff>:/images/cross_16.png</iconset>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <widget class="QGroupBox" name="resouces_group">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="title">
+           <string>Resources</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5" columnstretch="1,8">
+           <property name="leftMargin">
+            <number>16</number>
+           </property>
+           <property name="topMargin">
+            <number>8</number>
+           </property>
+           <property name="rightMargin">
+            <number>8</number>
+           </property>
+           <property name="bottomMargin">
+            <number>8</number>
+           </property>
+           <property name="spacing">
+            <number>8</number>
+           </property>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_48">
+             <property name="maximumSize">
+              <size>
+               <width>40</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>RAM:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_47">
+             <property name="maximumSize">
+              <size>
+               <width>40</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>CPU:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QProgressBar" name="progressBar">
+             <property name="value">
+              <number>24</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QProgressBar" name="progressBar_2">
+             <property name="value">
+              <number>24</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tap_players">
+       <attribute name="title">
+        <string>Players</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="tab_players_layout">
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <property name="topMargin">
+         <number>14</number>
+        </property>
+        <property name="rightMargin">
+         <number>14</number>
+        </property>
+        <property name="bottomMargin">
+         <number>14</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_online">
+            <property name="text">
+             <string>Online:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="online_players_list"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="unban_button">
+            <property name="minimumSize">
+             <size>
+              <width>41</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>41</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>&lt;&lt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ban_button">
+            <property name="maximumSize">
+             <size>
+              <width>41</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>&gt;&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QLabel" name="label_banned">
+            <property name="text">
+             <string>Banned:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="banned_players_list"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_worlds">
+       <attribute name="title">
+        <string>Worlds</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="tab_wods_layout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <property name="topMargin">
+         <number>14</number>
+        </property>
+        <property name="rightMargin">
+         <number>14</number>
+        </property>
+        <property name="bottomMargin">
+         <number>14</number>
+        </property>
+        <item>
+         <widget class="QListWidget" name="worlds_list">
+          <property name="lineWidth">
+           <number>1</number>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>32</width>
+            <height>32</height>
+           </size>
+          </property>
+          <property name="flow">
+           <enum>QListView::TopToBottom</enum>
+          </property>
+          <property name="viewMode">
+           <enum>QListView::ListMode</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="button_layout">
+          <item>
+           <widget class="QPushButton" name="worlds_update_button">
+            <property name="text">
+             <string>Update</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_admin">
+       <attribute name="title">
+        <string>Admin tools(experimental)</string>
+       </attribute>
+       <widget class="QPushButton" name="summon_item_button">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>16</y>
+          <width>89</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Summon item</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="inventory_edit_button">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>16</y>
+          <width>89</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Edit user
+inventory</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="world_edit_button">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>224</x>
+          <y>16</y>
+          <width>89</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Edit world
+using MCedit</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_mods">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#frame{
+border: 1px solid #888888;
+}</string>
+       </property>
+       <attribute name="title">
+        <string>Mods</string>
+       </attribute>
+       <widget class="QListWidget" name="listWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>16</x>
+          <y>16</y>
+          <width>137</width>
+          <height>417</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_5">
+        <property name="geometry">
+         <rect>
+          <x>192</x>
+          <y>8</y>
+          <width>417</width>
+          <height>417</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Mod information</string>
+        </property>
+        <widget class="QFrame" name="frame">
+         <property name="geometry">
+          <rect>
+           <x>272</x>
+           <y>24</y>
+           <width>120</width>
+           <height>120</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>16</x>
+           <y>24</y>
+           <width>57</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Mod name:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="mod_name_label">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>24</y>
+           <width>169</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>[Mod name]</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton_13">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>16</y>
+          <width>25</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>+</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_14">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>48</y>
+          <width>25</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_properties">
+       <attribute name="title">
+        <string>Server properties</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="tab_properties_layout">
+        <property name="spacing">
+         <number>16</number>
+        </property>
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <property name="topMargin">
+         <number>14</number>
+        </property>
+        <property name="rightMargin">
+         <number>14</number>
+        </property>
+        <property name="bottomMargin">
+         <number>14</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOn</enum>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>589</width>
+             <height>1078</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" columnstretch="0,0">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetDefaultConstraint</enum>
+            </property>
+            <property name="leftMargin">
+             <number>14</number>
+            </property>
+            <property name="topMargin">
+             <number>14</number>
+            </property>
+            <property name="rightMargin">
+             <number>14</number>
+            </property>
+            <property name="bottomMargin">
+             <number>14</number>
+            </property>
+            <item row="3" column="0">
+             <widget class="QLabel" name="broadcast_console_label">
+              <property name="text">
+               <string>Broadcast console to operators:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="18" column="0">
+             <widget class="QLabel" name="view_distance_label">
+              <property name="text">
+               <string>View distance:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="35" column="1">
+             <widget class="QSpinBox" name="network_compression_spin">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>2147483647</number>
+              </property>
+             </widget>
+            </item>
+            <item row="18" column="1">
+             <widget class="QSpinBox" name="view_distance_spin">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="35" column="0">
+             <widget class="QLabel" name="network_compression_label">
+              <property name="text">
+               <string>Network compression threshold:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="23" column="0">
+             <widget class="QLabel" name="generate_structs_label">
+              <property name="text">
+               <string>Generate structures:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="27" column="0">
+             <widget class="QLabel" name="prevent_proxy_label">
+              <property name="text">
+               <string>Prevent proxy connections:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="20" column="1">
+             <widget class="QWidget" name="whitelist_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="whitelist_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Flase</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="whitelist_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="11" column="1">
+             <widget class="QWidget" name="rcon_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="rcon_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="rcon_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="30" column="1">
+             <widget class="QWidget" name="pvp_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="pvp_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Flase</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="pvp_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="26" column="1">
+             <widget class="QWidget" name="online_mode_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="online_mode_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="online_mode_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QWidget" name="query_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="query_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="query_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="24" column="1">
+             <widget class="QWidget" name="sooper_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="snooper_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="snooper_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="25" column="1">
+             <widget class="QWidget" name="hardcore_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="hardcore_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="hardcore_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="14" column="1">
+             <widget class="QWidget" name="force_game_mode_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="force_game_mode_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="force_game_mode_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="19" column="1">
+             <widget class="QWidget" name="npc_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="npc_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="npc_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QWidget" name="nether_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="baseSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="nether_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="nether_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="32" column="1">
+             <widget class="QWidget" name="command_block_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="command_block_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="command_block_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="21" column="1">
+             <widget class="QWidget" name="animals_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="animals_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="animals_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QWidget" name="flight_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QRadioButton" name="flight_true">
+                 <property name="text">
+                  <string>True</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QRadioButton" name="flight_false">
+                 <property name="text">
+                  <string>False</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="23" column="1">
+             <widget class="QWidget" name="generate_structs_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="generate_structs_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="generate_structs_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="27" column="1">
+             <widget class="QWidget" name="prevent_proxy_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="prevent_proxy_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="prevent_proxy_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="22" column="1">
+             <widget class="QWidget" name="monsters_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="monsters_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="monsters_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QWidget" name="broadcast_console_group" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="baseSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <widget class="QRadioButton" name="broadcast_console_false">
+               <property name="geometry">
+                <rect>
+                 <x>64</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>False</string>
+               </property>
+              </widget>
+              <widget class="QRadioButton" name="broadcast_console_true">
+               <property name="geometry">
+                <rect>
+                 <x>8</x>
+                 <y>4</y>
+                 <width>49</width>
+                 <height>17</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>True</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item row="33" column="1">
+             <widget class="QSpinBox" name="idle_timeout_spin">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>32768</number>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="1">
+             <widget class="QComboBox" name="level_type_combo">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>DEFAULT</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>FLAT</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>LARGEBIOMES</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>AMPLIFIED</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>CUSTOMIZED</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="36" column="0">
+             <widget class="QLabel" name="max_player_label">
+              <property name="text">
+               <string>Maximum players:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="34" column="0">
+             <widget class="QLabel" name="game_mode_label">
+              <property name="text">
+               <string>Gamemode</string>
+              </property>
+             </widget>
+            </item>
+            <item row="32" column="0">
+             <widget class="QLabel" name="command_block_label">
+              <property name="text">
+               <string>Enable command block:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="motd_field">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="37" column="0">
+             <widget class="QLabel" name="tick_time_label">
+              <property name="text">
+               <string>Maximum tick time:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QComboBox" name="op_level_combo">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>1</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>4</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QSpinBox" name="query_port_spin">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>65534</number>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="query_port_label">
+              <property name="text">
+               <string>Query port:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="query_label">
+              <property name="text">
+               <string>Enable Query:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0">
+             <widget class="QLabel" name="rcon_port_label">
+              <property name="text">
+               <string>Rcon port:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="op_level_label">
+              <property name="text">
+               <string>Operator permission level:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="gen_sets_edit">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="20" column="0">
+             <widget class="QLabel" name="whitelist_label">
+              <property name="text">
+               <string>White list enabled:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="gen_sets_label">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Generator settings:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="nether_label">
+              <property name="text">
+               <string>Allow Nether</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="port_label">
+              <property name="text">
+               <string>Server port:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="1">
+             <widget class="QLineEdit" name="seed_field">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="25" column="0">
+             <widget class="QLabel" name="hardcore_label">
+              <property name="text">
+               <string>Hardcore mode:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="0">
+             <widget class="QLabel" name="force_gamemode_label">
+              <property name="text">
+               <string>Force gamemode:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="16" column="1">
+             <widget class="QLineEdit" name="ip_field">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="inputMask">
+               <string>000.000.000.000</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="placeholderText">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="16" column="0">
+             <widget class="QLabel" name="ip_label">
+              <property name="text">
+               <string>Server IP</string>
+              </property>
+             </widget>
+            </item>
+            <item row="26" column="0">
+             <widget class="QLabel" name="online_mode_label">
+              <property name="text">
+               <string>Online mode:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="19" column="0">
+             <widget class="QLabel" name="npc_label">
+              <property name="text">
+               <string>Spawn NPCs:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="0">
+             <widget class="QLabel" name="seed_label">
+              <property name="text">
+               <string>Level seed</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QLabel" name="level_type_label">
+              <property name="text">
+               <string>Level type:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="17" column="0">
+             <widget class="QLabel" name="build_height_label">
+              <property name="text">
+               <string>Maximum build height</string>
+              </property>
+             </widget>
+            </item>
+            <item row="17" column="1">
+             <widget class="QSpinBox" name="build_height_spin">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>256</number>
+              </property>
+             </widget>
+            </item>
+            <item row="28" column="1">
+             <widget class="QLineEdit" name="resourcepack_field">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="24" column="0">
+             <widget class="QLabel" name="snooper_label">
+              <property name="text">
+               <string>Enable snooper</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="flight_label">
+              <property name="text">
+               <string>Allow flight:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="31" column="0">
+             <widget class="QLabel" name="difficulty_label">
+              <property name="text">
+               <string>Difficulty</string>
+              </property>
+             </widget>
+            </item>
+            <item row="28" column="0">
+             <widget class="QLabel" name="resourcepack_label">
+              <property name="text">
+               <string>Resource pack:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="30" column="0">
+             <widget class="QLabel" name="pvp_label">
+              <property name="text">
+               <string>Enable PVP</string>
+              </property>
+             </widget>
+            </item>
+            <item row="37" column="1">
+             <widget class="QSpinBox" name="tick_time_spin">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>2147483647</number>
+              </property>
+             </widget>
+            </item>
+            <item row="33" column="0">
+             <widget class="QLabel" name="idle_timeout_label">
+              <property name="text">
+               <string>Player idle timeout:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="34" column="1">
+             <widget class="QComboBox" name="game_mode_combo">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="editable">
+               <bool>true</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>Survival</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Creative</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Adventure</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Spectator</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="36" column="1">
+             <widget class="QSpinBox" name="max_players_spin">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>2147483647</number>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="0">
+             <widget class="QLabel" name="rcon_label">
+              <property name="text">
+               <string>Enable rcon</string>
+              </property>
+             </widget>
+            </item>
+            <item row="21" column="0">
+             <widget class="QLabel" name="animals_label">
+              <property name="text">
+               <string>Spawn animals:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="motd_label">
+              <property name="text">
+               <string>Server description</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="QSpinBox" name="world_size_spin">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>29999999</number>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="world_size_label">
+              <property name="text">
+               <string>Maximum world size:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="0">
+             <widget class="QLabel" name="rcon_password_label">
+              <property name="text">
+               <string>Rcon password</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="1">
+             <widget class="QSpinBox" name="rcon_port_spin">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>65534</number>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="1">
+             <widget class="QLineEdit" name="rcon_password_field">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
+              <property name="placeholderText">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="31" column="1">
+             <widget class="QComboBox" name="difficulty_combo">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="editable">
+               <bool>true</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>Peaceful</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Easy</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Medium</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Hard</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QSpinBox" name="port_spin">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>65534</number>
+              </property>
+             </widget>
+            </item>
+            <item row="29" column="0">
+             <widget class="QLabel" name="resourcepack_sha_1_label">
+              <property name="text">
+               <string>Resource pack SHA-1:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="29" column="1">
+             <widget class="QLineEdit" name="resourcepack_sha_1_field">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="22" column="0">
+             <widget class="QLabel" name="monsters_label">
+              <property name="text">
+               <string>Spawn monsters:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="buttons_layout">
+          <item>
+           <widget class="QPushButton" name="properties_save_button">
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="properties_update_button">
+            <property name="text">
+             <string>Update</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_settings">
+       <attribute name="title">
+        <string>Settings</string>
+       </attribute>
+       <layout class="QGridLayout" name="tab_settings_layout">
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <property name="topMargin">
+         <number>14</number>
+        </property>
+        <property name="rightMargin">
+         <number>14</number>
+        </property>
+        <property name="bottomMargin">
+         <number>14</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QScrollArea" name="scrollArea_2">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>606</width>
+             <height>189</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+             <horstretch>0</horstretch>
+             <verstretch>66</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>59</width>
+             <height>58</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>189</height>
+            </size>
+           </property>
+           <property name="baseSize">
+            <size>
+             <width>0</width>
+             <height>67</height>
+            </size>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0,0,0,0" columnstretch="0,0">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetMinimumSize</enum>
+            </property>
+            <property name="leftMargin">
+             <number>14</number>
+            </property>
+            <property name="topMargin">
+             <number>14</number>
+            </property>
+            <property name="rightMargin">
+             <number>14</number>
+            </property>
+            <property name="bottomMargin">
+             <number>14</number>
+            </property>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_45">
+              <property name="text">
+               <string>Show icon in taskbar</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_36">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Jar to launch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_46">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Working dir</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QCheckBox" name="play_sound_checkbox">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QCheckBox" name="checkBox_2">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_44">
+              <property name="text">
+               <string>Play sound when player joins game</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="jar_combo">
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_37">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>RAM for server</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QWidget" name="widget_15" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="baseSize">
+               <size>
+                <width>0</width>
+                <height>48</height>
+               </size>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>2</number>
+               </property>
+               <property name="topMargin">
+                <number>2</number>
+               </property>
+               <property name="rightMargin">
+                <number>2</number>
+               </property>
+               <property name="bottomMargin">
+                <number>2</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                 <property name="spacing">
+                  <number>14</number>
+                 </property>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_8">
+                   <item>
+                    <widget class="QSlider" name="ram_slider">
+                     <property name="minimum">
+                      <number>512</number>
+                     </property>
+                     <property name="maximum">
+                      <number>3072</number>
+                     </property>
+                     <property name="singleStep">
+                      <number>256</number>
+                     </property>
+                     <property name="pageStep">
+                      <number>512</number>
+                     </property>
+                     <property name="value">
+                      <number>512</number>
+                     </property>
+                     <property name="sliderPosition">
+                      <number>512</number>
+                     </property>
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="tickPosition">
+                      <enum>QSlider::TicksBelow</enum>
+                     </property>
+                     <property name="tickInterval">
+                      <number>256</number>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="ram_value_label">
+                   <property name="maximumSize">
+                    <size>
+                     <width>41</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>3072MB</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>512</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_3">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="ram_max_label">
+                   <property name="text">
+                    <string>3072</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_4">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>42</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QWidget" name="widget_17" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>24</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>24</height>
+               </size>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout" stretch="6,1">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLineEdit" name="working_dir_field">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="working_dir_choose_button">
+                 <property name="maximumSize">
+                  <size>
+                   <width>24</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="flat">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_about">
+       <attribute name="title">
+        <string>About</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="tab_about_layout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <property name="topMargin">
+         <number>14</number>
+        </property>
+        <property name="rightMargin">
+         <number>14</number>
+        </property>
+        <property name="bottomMargin">
+         <number>14</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="resources.qrc">:/images/Logo.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Free open-source Minecraft server wrapper written with Qt&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignHCenter|Qt::AlignTop</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Version 1.0.0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Copyright © 2017-2018 Igor Mahov</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignHCenter|Qt::AlignTop</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>start_button</tabstop>
+  <tabstop>stop_button</tabstop>
+  <tabstop>gen_sets_edit</tabstop>
+  <tabstop>export_log_button</tabstop>
+  <tabstop>worlds_list</tabstop>
+  <tabstop>summon_item_button</tabstop>
+  <tabstop>inventory_edit_button</tabstop>
+  <tabstop>world_edit_button</tabstop>
+  <tabstop>listWidget_3</tabstop>
+  <tabstop>pushButton_13</tabstop>
+  <tabstop>pushButton_14</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>op_level_combo</tabstop>
+  <tabstop>nether_false</tabstop>
+  <tabstop>nether_true</tabstop>
+  <tabstop>rcon_false</tabstop>
+  <tabstop>rcon_true</tabstop>
+  <tabstop>force_game_mode_false</tabstop>
+  <tabstop>force_game_mode_true</tabstop>
+  <tabstop>flight_false</tabstop>
+  <tabstop>flight_true</tabstop>
+  <tabstop>npc_false</tabstop>
+  <tabstop>npc_true</tabstop>
+  <tabstop>seed_field</tabstop>
+  <tabstop>ip_field</tabstop>
+  <tabstop>whitelist_false</tabstop>
+  <tabstop>whitelist_true</tabstop>
+  <tabstop>difficulty_combo</tabstop>
+  <tabstop>query_false</tabstop>
+  <tabstop>query_true</tabstop>
+  <tabstop>idle_timeout_spin</tabstop>
+  <tabstop>game_mode_combo</tabstop>
+  <tabstop>max_players_spin</tabstop>
+  <tabstop>online_mode_false</tabstop>
+  <tabstop>online_mode_true</tabstop>
+  <tabstop>pvp_false</tabstop>
+  <tabstop>pvp_true</tabstop>
+  <tabstop>animals_false</tabstop>
+  <tabstop>animals_true</tabstop>
+  <tabstop>snooper_false</tabstop>
+  <tabstop>snooper_true</tabstop>
+  <tabstop>hardcore_false</tabstop>
+  <tabstop>hardcore_true</tabstop>
+  <tabstop>world_size_spin</tabstop>
+  <tabstop>command_block_false</tabstop>
+  <tabstop>command_block_true</tabstop>
+  <tabstop>resourcepack_field</tabstop>
+  <tabstop>build_height_spin</tabstop>
+  <tabstop>level_type_combo</tabstop>
+  <tabstop>tick_time_spin</tabstop>
+  <tabstop>properties_save_button</tabstop>
+  <tabstop>scrollArea_2</tabstop>
+  <tabstop>play_sound_checkbox</tabstop>
+  <tabstop>checkBox_2</tabstop>
+  <tabstop>working_dir_field</tabstop>
+  <tabstop>log_level_box</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>8</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>8</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
