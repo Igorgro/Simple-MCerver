@@ -6,7 +6,7 @@
 class BannedPlayers
 {
 public:
-    static BannedPlayers* getInstance();
+    static BannedPlayers* get_instance();
     void load_banned_players();
     int size();
     const QString& at(int i);

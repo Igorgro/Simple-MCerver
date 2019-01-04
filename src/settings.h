@@ -11,7 +11,7 @@ public:
 
     enum LogLevel {info, warn, error};
 
-    static Settings* getInstance();
+    static Settings* get_instance();
 
     static LogLevel string_to_log_level (QString str);
     static QString log_level_to_string (LogLevel log_level);

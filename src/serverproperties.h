@@ -6,7 +6,7 @@ class ServerProperties
 {
 public:
 
-    static ServerProperties* getInstance();
+    static ServerProperties* get_instance();
     void load_server_properties();
     void save_to_disk();
 

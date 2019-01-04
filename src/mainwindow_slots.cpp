@@ -4,6 +4,7 @@
 #include "operators.h"
 #include "serverproperties.h"
 #include "warndialog.h"
+#include "servermods.h"
 #include <QFileDialog>
 #include <QFile>
 #include <QIODevice>
@@ -12,9 +13,10 @@
 #include <QDebug>
 #include <QList>
 
+//main tab
 void MainWindow::on_start_button_clicked()
 {
-    if (Settings::getInstance()->get_jar().compare(QString("")))
+    if (Settings::get_instance()->get_jar().compare(QString("")))
     {
         ui->console_area->setText("");
         _serv_thread.start();
@@ -46,13 +48,13 @@ void MainWindow::on_command_edit_returnPressed()
 
 void MainWindow::on_log_level_box_currentTextChanged(const QString &arg1)
 {
-    Settings::getInstance()->set_log_level(Settings::string_to_log_level(arg1));
+    Settings::get_instance()->set_log_level(Settings::string_to_log_level(arg1));
 }
 
 void MainWindow::on_export_log_button_clicked()
 {
     QString save_path = QFileDialog::getSaveFileName (this, QString("Export log..."),
-                                                      Settings::getInstance()->get_working_dir(),
+                                                      Settings::get_instance()->get_working_dir(),
                                                       QString ("Log files (*.log)"));
     if (save_path.length() > 0)
     {
@@ -68,6 +70,7 @@ void MainWindow::on_export_log_button_clicked()
 
 
 
+//players tab
 void MainWindow::on_online_players_list_menu_requested(QPoint p)
 {
     if (ui->online_players_list->itemAt(p) != nullptr)
@@ -129,6 +132,8 @@ void MainWindow::on_unban_button_clicked()
 
 
 
+
+//worlds tab
 void MainWindow::on_worlds_list_menu_requested (QPoint p)
 {
     if (ui->worlds_list->itemAt(p) != nullptr && !_serv_thread.is_running())
@@ -144,7 +149,7 @@ void MainWindow::on_worlds_list_menu_requested (QPoint p)
 
 void MainWindow::on_worlds_list_menu_select()
 {
-    QString prev_world_name = ServerProperties::getInstance()->get_level_name();
+    QString prev_world_name = ServerProperties::get_instance()->get_level_name();
 
     //change icon of deselected world
     QListWidgetItem* prev_world = find_item(ui->worlds_list, prev_world_name);
@@ -155,13 +160,13 @@ void MainWindow::on_worlds_list_menu_select()
     //change icon of selected world
     sel_world->setIcon (QPixmap(QString(":/images/world_32_tick.png")));
 
-    ServerProperties::getInstance()->set_level_name(sel_world->text());
-    ServerProperties::getInstance()->save_to_disk();
+    ServerProperties::get_instance()->set_level_name(sel_world->text());
+    ServerProperties::get_instance()->save_to_disk();
 }
 
 void MainWindow::on_worlds_update_button_clicked()
 {
-    Settings::getInstance()->load_available_worlds();
+    Settings::get_instance()->load_available_worlds();
     gui_load_worlds();
 }
 
@@ -169,9 +174,33 @@ void MainWindow::on_worlds_update_button_clicked()
 
 
 
+//mods tab
+void MainWindow::on_mods_list_itemClicked(QListWidgetItem *item)
+{
+    QString mod_filename = item->text();
+    Mod curr_mod = ServerMods::get_instance()->get_mod_at(mod_filename);
+
+    ui->mod_id_textfield->setText(curr_mod.get_id());
+    ui->mod_name_textfield->setText(curr_mod.get_name());
+    ui->mod_version_textfield->setText(curr_mod.get_version());
+    ui->mod_desc_textfield->setText(curr_mod.get_desc());
+    ui->mod_cred_textfield->setText(curr_mod.get_cred());
+}
+
+void MainWindow::on_update_mods_button_clicked()
+{
+    ServerMods::get_instance()->load_mods();
+    gui_load_mods();
+}
+
+
+
+
+
+//server properties tab
 void MainWindow::on_properties_update_button_clicked()
 {
-    ServerProperties::getInstance()->load_server_properties();
+    ServerProperties::get_instance()->load_server_properties();
     gui_load_server_properties();
     gui_load_worlds();
 }
@@ -179,48 +208,50 @@ void MainWindow::on_properties_update_button_clicked()
 void MainWindow::on_properties_save_button_clicked()
 {
     gui_save_server_properties();
-    ServerProperties::getInstance()->save_to_disk();
+    ServerProperties::get_instance()->save_to_disk();
 }
 
 
 
 
 
+//settings tab
 void MainWindow::on_working_dir_choose_button_clicked()
 {
     QString new_dir = QFileDialog::getExistingDirectory(this, QString("Select working directory..."),
-                                                        Settings::getInstance()->get_working_dir());
+                                                        Settings::get_instance()->get_working_dir());
     if (new_dir.length() > 0)
     {
-        Settings::getInstance()->set_working_dir(new_dir);
-        ui->working_dir_field->setText(Settings::getInstance()->get_working_dir());
+        Settings::get_instance()->set_working_dir(new_dir);
+        ui->working_dir_field->setText(Settings::get_instance()->get_working_dir());
         gui_update_jars();
         gui_load_banned_players();
         gui_load_server_properties();
         gui_load_worlds();
+        gui_load_mods();
     }
 }
 
 void MainWindow::on_jar_combo_currentIndexChanged(int index)
 {
-    Settings::getInstance()->set_jar(ui->jar_combo->currentText());
+    Settings::get_instance()->set_jar(ui->jar_combo->currentText());
 }
 
 void MainWindow::on_ram_slider_sliderMoved(int value)
 {
     ui->ram_value_label->setText(QString::number(value).append("MB"));
-    Settings::getInstance()->set_ram(value);
+    Settings::get_instance()->set_ram(value);
 }
 
 void MainWindow::on_ram_slider_valueChanged(int value)
 {
     ui->ram_value_label->setText(QString::number(value).append("MB"));
-    Settings::getInstance()->set_ram(value);
+    Settings::get_instance()->set_ram(value);
 }
 
 void MainWindow::on_play_sound_checkbox_stateChanged(int arg1)
 {
-    Settings::getInstance()->set_play_sound(ui->play_sound_checkbox->isChecked());
+    Settings::get_instance()->set_play_sound(ui->play_sound_checkbox->isChecked());
 }
 
 

@@ -30,14 +30,14 @@ void MessageProcessingThread::process_message(QString message)
 {
     switch (get_message_type(message)) {
         case MessageType::info:
-            if (Settings::getInstance()->get_log_level() == Settings::LogLevel::info)
+            if (Settings::get_instance()->get_log_level() == Settings::LogLevel::info)
             {
                 emit print_info(message);
             }
             break;
         case MessageType::warn:
-            if (Settings::getInstance()->get_log_level() == Settings::LogLevel::warn ||
-                Settings::getInstance()->get_log_level() == Settings::LogLevel::info)
+            if (Settings::get_instance()->get_log_level() == Settings::LogLevel::warn ||
+                Settings::get_instance()->get_log_level() == Settings::LogLevel::info)
             {
                 emit print_warn(message);
             }

@@ -14,7 +14,7 @@ ServerProperties::ServerProperties()
 
 void ServerProperties::load_server_properties()
 {
-    QString props_filename = Settings::getInstance()->get_working_dir().append("/server.properties");
+    QString props_filename = Settings::get_instance()->get_working_dir().append("/server.properties");
     if (QFile (props_filename).exists())
     {
         Properties props = Properties (std::string(props_filename.toLocal8Bit().data()));
@@ -160,11 +160,11 @@ void ServerProperties::save_to_disk()
     props.setValue (std::string ("max-players"), int_to_string(get_max_players()));
     props.setValue (std::string ("max-tick-time"), int_to_string(get_tick_time()));
 
-    props.storeToFile (std::string (Settings::getInstance()->get_working_dir().append(QString("/server.properties")).toLocal8Bit().data()));
+    props.storeToFile (std::string (Settings::get_instance()->get_working_dir().append(QString("/server.properties")).toLocal8Bit().data()));
 }
 
 
-ServerProperties* ServerProperties::getInstance()
+ServerProperties* ServerProperties::get_instance()
 {
     static ServerProperties* _instance = new ServerProperties();
     _is_created = true;

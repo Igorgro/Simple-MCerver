@@ -53,6 +53,7 @@ private:
     void gui_load_banned_players();
     void gui_update_jars();
     void gui_load_worlds();
+    void gui_load_mods();
     void gui_load_server_properties();
     void gui_save_server_properties();
 
@@ -92,6 +93,10 @@ private slots:
     void on_properties_update_button_clicked();
 
     void on_play_sound_checkbox_stateChanged(int arg1);
+
+    void on_mods_list_itemClicked(QListWidgetItem *item);
+
+    void on_update_mods_button_clicked();
 
 public slots:
     void on_online_players_list_menu_requested (QPoint point);

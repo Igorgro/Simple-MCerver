@@ -37,7 +37,9 @@ SOURCES += \
     warndialog.cpp \
     serverproperties.cpp \
     message_processing_thread.cpp \
-    spawn_dialog.cpp
+    spawn_dialog.cpp \
+    mod.cpp \
+    servermods.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -49,7 +51,9 @@ HEADERS += \
     warndialog.h \
     serverproperties.h \
     message_processing_thread.h \
-    spawn_dialog.h
+    spawn_dialog.h \
+    mod.h \
+    servermods.h
 
 FORMS += \
     mainwindow.ui \
@@ -62,6 +66,7 @@ RC_FILE = simple_mcerver.rc
 
 LIBS += "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.17134.0\um\x86\kernel32.Lib"
 LIBS += $$PWD/lib/libproperties.a
+LIBS += $$PWD/lib/libquazip.a
 
 INCLUDEPATH += $$PWD/include
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>668</width>
+    <width>662</width>
     <height>468</height>
    </rect>
   </property>
@@ -30,19 +30,7 @@
     <normaloff>Icon.png</normaloff>Icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_6">
-    <property name="leftMargin">
-     <number>12</number>
-    </property>
-    <property name="topMargin">
-     <number>8</number>
-    </property>
-    <property name="rightMargin">
-     <number>12</number>
-    </property>
-    <property name="bottomMargin">
-     <number>12</number>
-    </property>
+   <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="autoFillBackground">
@@ -670,110 +658,211 @@ border: 1px solid #888888;
        <attribute name="title">
         <string>Mods</string>
        </attribute>
-       <widget class="QListWidget" name="listWidget_3">
-        <property name="geometry">
-         <rect>
-          <x>16</x>
-          <y>16</y>
-          <width>137</width>
-          <height>417</height>
-         </rect>
+       <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1,100">
+        <property name="spacing">
+         <number>4</number>
         </property>
-       </widget>
-       <widget class="QGroupBox" name="groupBox_5">
-        <property name="geometry">
-         <rect>
-          <x>192</x>
-          <y>8</y>
-          <width>417</width>
-          <height>417</height>
-         </rect>
+        <property name="leftMargin">
+         <number>14</number>
         </property>
-        <property name="title">
-         <string>Mod information</string>
+        <property name="topMargin">
+         <number>14</number>
         </property>
-        <widget class="QFrame" name="frame">
-         <property name="geometry">
-          <rect>
-           <x>272</x>
-           <y>24</y>
-           <width>120</width>
-           <height>120</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::Box</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_3">
-         <property name="geometry">
-          <rect>
-           <x>16</x>
-           <y>24</y>
-           <width>57</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Mod name:</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="mod_name_label">
-         <property name="geometry">
-          <rect>
-           <x>80</x>
-           <y>24</y>
-           <width>169</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>[Mod name]</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QPushButton" name="pushButton_13">
-        <property name="geometry">
-         <rect>
-          <x>160</x>
-          <y>16</y>
-          <width>25</width>
-          <height>25</height>
-         </rect>
+        <property name="rightMargin">
+         <number>14</number>
         </property>
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-         </font>
+        <property name="bottomMargin">
+         <number>14</number>
         </property>
-        <property name="text">
-         <string>+</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_14">
-        <property name="geometry">
-         <rect>
-          <x>160</x>
-          <y>48</y>
-          <width>25</width>
-          <height>25</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>-</string>
-        </property>
-       </widget>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="sizeConstraint">
+           <enum>QLayout::SetMinimumSize</enum>
+          </property>
+          <item>
+           <widget class="QListWidget" name="mods_list">
+            <property name="minimumSize">
+             <size>
+              <width>130</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>130</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="update_mods_button">
+            <property name="maximumSize">
+             <size>
+              <width>130</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Update</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>25</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>+</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>25</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <layout class="QFormLayout" name="formLayout">
+           <property name="horizontalSpacing">
+            <number>14</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>14</number>
+           </property>
+           <property name="leftMargin">
+            <number>14</number>
+           </property>
+           <property name="topMargin">
+            <number>14</number>
+           </property>
+           <property name="rightMargin">
+            <number>14</number>
+           </property>
+           <property name="bottomMargin">
+            <number>14</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Mod ID:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="mod_id_textfield">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Mod name:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Mod version:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>Mod description:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Mod credits</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="mod_name_textfield">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="mod_version_textfield">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="mod_desc_textfield">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="mod_cred_textfield">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="tab_properties">
        <attribute name="title">
@@ -2711,7 +2800,10 @@ border: 1px solid #888888;
            </font>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Version 1.0.0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Version 0.0.1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -2736,7 +2828,7 @@ border: 1px solid #888888;
            </font>
           </property>
           <property name="text">
-           <string>Copyright © 2017-2018 Igor Mahov</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Author: Igor Mahov&lt;/p&gt;&lt;p&gt;Licensed under GNU GPL V3&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -2763,9 +2855,6 @@ border: 1px solid #888888;
   <tabstop>summon_item_button</tabstop>
   <tabstop>inventory_edit_button</tabstop>
   <tabstop>world_edit_button</tabstop>
-  <tabstop>listWidget_3</tabstop>
-  <tabstop>pushButton_13</tabstop>
-  <tabstop>pushButton_14</tabstop>
   <tabstop>scrollArea</tabstop>
   <tabstop>op_level_combo</tabstop>
   <tabstop>nether_false</tabstop>

@@ -18,13 +18,13 @@ ServerThread::ServerThread()
 void ServerThread::start()
 {
     QString jar = QString ("");
-    jar.append(Settings::getInstance()->get_working_dir());
+    jar.append(Settings::get_instance()->get_working_dir());
     jar.append("/");
-    jar.append(Settings::getInstance()->get_jar());
+    jar.append(Settings::get_instance()->get_jar());
 
     QStringList args;
-    args << QString("-Xmx").append(QString::number(Settings::getInstance()->get_ram())).append("M");
-    args << QString("-Xms").append(QString::number(Settings::getInstance()->get_ram())).append("M");
+    args << QString("-Xmx").append(QString::number(Settings::get_instance()->get_ram())).append("M");
+    args << QString("-Xms").append(QString::number(Settings::get_instance()->get_ram())).append("M");
     args << "-jar";
     args << jar;
     args << "nogui";
@@ -32,7 +32,7 @@ void ServerThread::start()
 
     _serv_process.setProgram("java");
     _serv_process.setArguments(args);
-    _serv_process.setWorkingDirectory(Settings::getInstance()->get_working_dir());
+    _serv_process.setWorkingDirectory(Settings::get_instance()->get_working_dir());
     _serv_process.open(QProcess::ReadWrite);
 
      emit server_starting();

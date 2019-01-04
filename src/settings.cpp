@@ -2,6 +2,7 @@
 #include "bannedplayers.h"
 #include "operators.h"
 #include "serverproperties.h"
+#include "servermods.h"
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QFile>
@@ -92,7 +93,7 @@ void Settings::save_to_disk()
     out.close();
 }
 
-Settings* Settings::getInstance()
+Settings* Settings::get_instance()
 {
     static Settings* _instance = new Settings();
     return _instance;
@@ -137,11 +138,13 @@ const QStringList* Settings::get_available_worlds() {return &_available_worlds;}
 void Settings::set_working_dir(QString working_dir)
 {
     _working_dir = working_dir;
+    //Changing of working directory cause reloading of all resources
     load_available_jars();
     load_available_worlds();
     if (Operators::is_created()) Operators::getInstance()->load_operators();
-    if (BannedPlayers::is_created()) BannedPlayers::getInstance()->load_banned_players();
-    if (ServerProperties::is_created()) ServerProperties::getInstance()->load_server_properties();
+    if (BannedPlayers::is_created()) BannedPlayers::get_instance()->load_banned_players();
+    if (ServerProperties::is_created()) ServerProperties::get_instance()->load_server_properties();
+    if (ServerMods::is_created()) ServerMods::get_instance()->load_mods();
 }
 void Settings::set_jar(QString jar) {_jar = jar;}
 void Settings::set_ram(int ram) {_ram = ram;}

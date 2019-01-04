@@ -14,18 +14,18 @@ Operators::Operators()
     load_operators();
 }
 
-
 Operators* Operators::getInstance()
 {
     static Operators* _instance = new Operators();
     _is_created = true;
     return _instance;
 }
+
 void Operators::load_operators()
 {
     _ops_arr = QVector<QString>();
 
-    QFile in (Settings::getInstance()->get_working_dir().append("/ops.json"));
+    QFile in (Settings::get_instance()->get_working_dir().append("/ops.json"));
     if (in.exists())
     {
         in.open(QIODevice::ReadOnly);
@@ -38,22 +38,23 @@ void Operators::load_operators()
             _ops_arr.append(j_ops_arr.at(i).toObject().value("name").toString());
         }
     }
-
 }
-
 
 void Operators::add_operator (QString player_name)
 {
     _ops_arr.append(player_name);
 }
+
 void Operators::remove_operator (QString player_name)
 {
     _ops_arr.removeOne(player_name);
 }
+
 bool Operators::is_operator(QString player_name)
 {
     return _ops_arr.contains(player_name);
 }
+
 bool Operators::is_created()
 {
     return _is_created;

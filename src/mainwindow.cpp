@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect_slots();
 
     init_gui();
+    qDebug()<<"3";
 }
 
 MainWindow::~MainWindow()
@@ -29,10 +30,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    //warn if user haven't stoped server
+    //warn if user haven't stopped server
     if (_serv_thread.is_running())
     {
         WarnDialog ewd (this, QString("Stop server before exiting Simple MCerver"));
@@ -42,7 +42,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     else
     {
        processing_thread.stop();
-       Settings::getInstance()->save_to_disk();
+       Settings::get_instance()->save_to_disk();
 
        event->accept();
     }
@@ -64,14 +64,13 @@ void MainWindow::connect_slots()
 
     connect(&_serv_thread, SIGNAL(server_stoped()), this, SLOT(gui_server_stoped()));
     connect(&_serv_thread, SIGNAL(server_starting()), this, SLOT(gui_server_starting()));
-
 }
 
 
 void MainWindow::init_gui()
 {
     unsigned long long ram_k = 0;
-    GetPhysicallyInstalledSystemMemory(&ram_k);
+    GetPhysicallyInstalledSystemMemory(&ram_k); // :( this line makes program not platform-independent
     int ram_m = static_cast<int>(ram_k/1024);
     ui->ram_slider->setMaximum(ram_m);
     ui->ram_max_label->setText(QString::number(ram_m));
@@ -81,17 +80,18 @@ void MainWindow::init_gui()
     gui_load_banned_players();
     gui_load_server_properties();
     gui_load_worlds();
+    gui_load_mods();
     ui->online_players_list->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->online_players_list, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(on_online_players_list_menu_requested(QPoint)));
 
     ui->worlds_list->setContextMenuPolicy(Qt::CustomContextMenu);
     connect (ui->worlds_list, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(on_worlds_list_menu_requested(QPoint)));
 
-    ui->tabWidget->setTabEnabled(3, false);
-    ui->tabWidget->setTabEnabled(4, false);
-
-
+    ui->tabWidget->setTabEnabled(3, false);//admin tools is in development
 }
+
+
+
 
 
 

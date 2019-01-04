@@ -14,17 +14,18 @@ BannedPlayers::BannedPlayers()
     load_banned_players();
 }
 
-BannedPlayers* BannedPlayers::getInstance()
+BannedPlayers* BannedPlayers::get_instance()
 {
     static BannedPlayers* _instance = new BannedPlayers();
     _is_created = true;
     return _instance;
 }
+
 void BannedPlayers::load_banned_players()
 {
     _ban_arr = QVector<QString>();
 
-    QFile in (Settings::getInstance()->get_working_dir().append("/banned-players.json"));
+    QFile in (Settings::get_instance()->get_working_dir().append("/banned-players.json"));
     if (in.exists())
     {
         in.open(QIODevice::ReadOnly);
@@ -40,11 +41,11 @@ void BannedPlayers::load_banned_players()
 
 }
 
-
 int BannedPlayers::size()
 {
     return _ban_arr.size();
 }
+
 const QString& BannedPlayers::at(int i)
 {
     return _ban_arr.at(i);
