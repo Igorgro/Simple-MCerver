@@ -42,3 +42,4 @@ target_wrapper.*
 # QtCreator CMake
 CMakeLists.txt.user*
 *.user
+src/simple_mcerver.pro.user
