@@ -94,9 +94,10 @@ private slots:
 
     void on_play_sound_checkbox_stateChanged(int arg1);
 
-    void on_mods_list_itemClicked(QListWidgetItem *item);
+    void on_mods_list_itemSelectionChanged();
 
     void on_update_mods_button_clicked();
+
 
 public slots:
     void on_online_players_list_menu_requested (QPoint point);

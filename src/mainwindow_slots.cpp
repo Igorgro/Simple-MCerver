@@ -175,9 +175,9 @@ void MainWindow::on_worlds_update_button_clicked()
 
 
 //mods tab
-void MainWindow::on_mods_list_itemClicked(QListWidgetItem *item)
+void MainWindow::on_mods_list_itemSelectionChanged()
 {
-    QString mod_filename = item->text();
+    QString mod_filename = ui->mods_list->currentItem()->text();
     Mod curr_mod = ServerMods::get_instance()->get_mod_at(mod_filename);
 
     ui->mod_id_textfield->setText(curr_mod.get_id());

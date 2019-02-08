@@ -22,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect_slots();
 
     init_gui();
-    qDebug()<<"3";
 }
 
 MainWindow::~MainWindow()
@@ -89,6 +88,8 @@ void MainWindow::init_gui()
 
     ui->tabWidget->setTabEnabled(3, false);//admin tools is in development
 }
+
+
 
 
 
