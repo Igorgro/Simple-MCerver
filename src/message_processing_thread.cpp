@@ -53,21 +53,31 @@ void MessageProcessingThread::process_message(QString message)
 
     player_name = is_player_joined_the_game(message);
     if (player_name.length() > 0) emit make_player_online(player_name);
-
-    player_name = is_player_left_the_game(message);
-    if (player_name.length() > 0) emit make_player_offline(player_name);
-
-    player_name = is_player_opped(message);
-    if (player_name.length() > 0) emit make_player_opped(player_name);
-
-    player_name = is_player_deopped(message);
-    if (player_name.length() > 0) emit make_player_deopped(player_name);
-
-    player_name = is_player_banned(message);
-    if (player_name.length() > 0) emit make_player_banned(player_name);
-
-    player_name = is_player_unbanned(message);
-    if (player_name.length() > 0) emit make_player_unbanned(player_name);
+    else
+    {
+        player_name = is_player_left_the_game(message);
+        if (player_name.length() > 0) emit make_player_offline(player_name);
+        else
+        {
+            player_name = is_player_opped(message);
+            if (player_name.length() > 0) emit make_player_opped(player_name);
+            else
+            {
+                player_name = is_player_deopped(message);
+                if (player_name.length() > 0) emit make_player_deopped(player_name);
+                else
+                {
+                    player_name = is_player_banned(message);
+                    if (player_name.length() > 0) emit make_player_banned(player_name);
+                    else
+                    {
+                        player_name = is_player_unbanned(message);
+                        if (player_name.length() > 0) emit make_player_unbanned(player_name);
+                    }
+                }
+            }
+        }
+    }
 }
 
 void MessageProcessingThread::stop()
@@ -130,6 +140,7 @@ QString MessageProcessingThread::is_player_opped(QString message)
 
     return player_name;
 }
+
 QString MessageProcessingThread::is_player_deopped(QString message)
 {
     QString player_name ("");
@@ -140,6 +151,7 @@ QString MessageProcessingThread::is_player_deopped(QString message)
 
     return player_name;
 }
+
 QString MessageProcessingThread::is_player_banned(QString message)
 {
     QString player_name ("");
@@ -150,6 +162,7 @@ QString MessageProcessingThread::is_player_banned(QString message)
 
     return player_name;
 }
+
 QString MessageProcessingThread::is_player_unbanned(QString message)
 {
     QString player_name ("");
