@@ -44,7 +44,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "C:\Users\Tetya\Downloads\zlib-1.2.3-lib\include\zlib.h"
+//#include "C:\Users\Tetya\Downloads\zlib-1.2.3-lib\include\zlib.h" // not funny, didn't laugh
+#include <zlib.h>
 
 #if defined(USE_FILE32API)
 #define fopen64 fopen
