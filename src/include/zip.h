@@ -53,7 +53,7 @@ extern "C" {
 //#define HAVE_BZIP2
 
 #ifndef _ZLIB_H
-#include "C:\Users\Tetya\Downloads\zlib-1.2.3-lib\include\zlib.h"
+//#include "C:\Users\Tetya\Downloads\zlib-1.2.3-lib\include\zlib.h" // seriously???
 #endif
 
 #ifndef _ZLIBIOAPI_H
