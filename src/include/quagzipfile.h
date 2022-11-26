@@ -27,8 +27,8 @@ see quazip/(un)zip.h files for details. Basically it's the zlib license.
 
 #include <QIODevice>
 #include "quazip_global.h"
-
-#include "C:\Users\Tetya\Downloads\zlib-1.2.3-lib\include\zlib.h"
+//ZLib required!
+#include <zlib.h>
 
 class QuaGzipFilePrivate;
 
