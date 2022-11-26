@@ -54,6 +54,7 @@ extern "C" {
 
 #ifndef _ZLIB_H
 //#include "C:\Users\Tetya\Downloads\zlib-1.2.3-lib\include\zlib.h" // seriously???
+#include <zlib.h>
 #endif
 
 #ifndef _ZLIBIOAPI_H
